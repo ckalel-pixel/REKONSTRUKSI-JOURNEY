@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekonstruksi Journey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Oswald:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Oswald', sans-serif;
+      background: black;
+      color: white;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      background: url('images/bg.jpg') center/cover no-repeat;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      color: rgb(255, 255, 255);
+    }
+
+    section { padding: 60px 10%; }
+
+    h2 { color: rgb(255, 255, 255); margin-bottom: 20px; text-align: center; }
+
+    .members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .member {
+      background: #111;
+      border: 1px solid rgb(255, 255, 255);
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .member:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgb(255, 255, 255);
+    }
+
+    .member img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      filter: contrast(120%) grayscale(30%);
+    }
+
+    .member h3 {
+      text-align: center;
+      padding: 10px;
+      color: rgb(255, 255, 255);
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #111;
+      padding: 30px;
+      border: 1px solid rgb(255, 255, 255);
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      border-top: 1px solid rgb(255, 255, 255);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>REKONSTRUKSI JOURNEY</h1>
+</header>
+
+<section>
+  <h2>AWAL MULA</h2>
+  <div class="card" style="margin-bottom:40px; background:#0a0a0a; border:1px solid rgb(255, 255, 255); padding:30px; border-radius:15px; line-height:1.8;">
+    <p>Di sudut kota Yogyakarta, lahirlah sebuah band dari ruang kelas seni budaya di SMA Negeri 10 Yogyakarta. Awalnya hanya sebuah tugas praktik—tanpa ambisi besar, tanpa mimpi panggung megah. Mereka menamai diri mereka The Mok, nama yang terdengar aneh, tapi penuh energi mentah.</p>
+
+    <p>Formasi awal diisi oleh Khafka Arsya sebagai vokalis, Ctvertlik Kal El Lucky sebagai gitaris lead, Muhammad Fachri sebagai gitaris rhythm, Dimas Adiegar pada bass, dan Aravena Afriza di drum. Mereka bukan band yang langsung jadi—sering tidak kompak, sering kacau, tapi justru dari kekacauan itu lahir sesuatu yang jujur.</p>
+
+    <p>Kesempatan tampil di Taman Budaya Yogyakarta menjadi titik balik. Di bawah lampu sederhana, mereka tidak hanya bermain musik mereka melampiaskan jiwa. Malam itu mengubah segalanya.</p>
+
+    <p>Seiring waktu, Aravena berpindah dari drum ke bass. Posisi drum diisi oleh Naufal Pralista yang awalnya hanya additional. Namun akhirnya menjadi bagian resmi. Perubahan ini bukan sekadar pergantian posisi, tapi awal dari identitas baru.</p>
+
+    <p>The Mok pun berevolusi menjadi <b>REKONSTRUKSI JOURNEY</b> sebuah nama yang bukan hanya identitas tapi makna. Mereka adalah perjalanan. Mereka adalah perubahan. Mereka adalah proses yang tidak pernah selesai.</p>
+
+    <p>Dari ruang kelas kecil hingga panggung, mereka terus berjalan. Jatuh, bangkit, dan terus merekonstruksi diri mereka dalam setiap nada yang dimainkan.
+
+    </p>
+   
+
+<div class="container">
+
+  <img src="images/REKONSTRUKSI.jpg" alt="Rekonstruksi Journey" style="width:100%; border-radius:15px; margin-top:20px;">
+
+  <p align="justify" style="margin-top:20px;">
+  Rekonstruksi Journey adalah band yang lahir dari tugas praktik seni budaya di SMA Negeri 10 Yogyakarta.
+  Berawal dari nama The Mok mereka berkembang menjadi perjalanan musik yang penuh makna.
+  </p>
+
+</div>
+
+<br><br>
+
+<div class="members">
+
+    <div class="member" onclick="openModal('Khafka Arsya','Vokal','images/khafka.jpg')">
+      <img src="images/khafka.jpg">
+      <h3>Khafka</h3>
+    </div>
+
+    <div class="member" onclick="openModal('Kal El','Lead Guitar','images/kalel.jpg')">
+      <img src="images/kalel.jpg">
+      <h3>Kal El</h3>
+    </div>
+
+    <div class="member" onclick="openModal('Fachri','Rhythm Guitar','images/fachri.jpg')">
+      <img src="images/fachri.jpg">
+      <h3>Fachri</h3>
+    </div>
+
+    <div class="member" onclick="openModal('Aravena','Bass (Former Drum)','images/aravena.jpg')">
+      <img src="images/aravena.jpg">
+      <h3>Aravena</h3>
+    </div>
+
+    <div class="member" onclick="openModal('Naufal','Drum','images/naufal.jpg')">
+      <img src="images/naufal.jpg">
+      <h3>Naufal</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <img id="modal-img">
+    <h2 id="modal-name"></h2>
+    <p id="modal-role"></p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Rekonstruksi Journey</p>
+</footer>
+
+<script>
+function openModal(name, role, img) {
+  document.getElementById('modal').style.display = 'flex';
+  document.getElementById('modal-name').innerText = name;
+  document.getElementById('modal-role').innerText = role;
+  document.getElementById('modal-img').src = img;
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
