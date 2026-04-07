@@ -13,6 +13,22 @@
       scroll-behavior: smooth;
     }
 
+    img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
     section {
       padding: 100px 20px;
       min-height: 100vh;
